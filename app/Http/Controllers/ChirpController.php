@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ChirpController extends Controller
 {
     //
-    public function create(){
-        return view('chirp.create');
+    public function create(){        
+        return view('chirp.create',  compact('chirp'));
     }
 
     public function index(){
@@ -23,5 +23,7 @@ class ChirpController extends Controller
     public function edit(Chirp $chirp){
         return view('chirp.edit', compact('chirp'));
     }
+
+   
 
 }

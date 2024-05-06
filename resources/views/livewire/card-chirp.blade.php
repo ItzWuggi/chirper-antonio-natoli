@@ -8,7 +8,8 @@
                     <p class="card-text">{{$chirp->content}}</p>
                     <a href="{{route('chirp.show', compact('chirp'))}}" class="btn btn-primary mb-3">Vai al dettaglio</a>
                     <a href="{{route('chirp.edit', compact('chirp'))}}" class="btn btn-success mb-3">Modifica il chirp</a>
-                    <button  wire:click="destroy({{$chirp}})" class="btn btn-danger">Elimina</button>
+                    <button  wire:click="destroy({{$chirp}})" class="btn btn-danger">Elimina</button> 
+                    <h6>Creato dall'utente {{$chirp->user->name}}</h6>
                 </div>
             </div>
         </div>

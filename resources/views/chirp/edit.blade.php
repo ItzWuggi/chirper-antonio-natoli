@@ -1,6 +1,6 @@
 <x-layout>
     <x-masthead title="Modifica Chirp"/>
-    <livewire:one-chirp 
+    <livewire:update-chirp
     :chirp="$chirp"
     />
 </x-layout>
