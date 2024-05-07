@@ -15,9 +15,9 @@ Route::get('chirp/create', [ChirpController::class, 'create'])->name('chirp.crea
 
 Route::get('chirp/index', [ChirpController::class, 'index'])->name('chirp.index');
 
-Route::get('chirp/show{chirp}', [ChirpController::class, 'show'])->name('chirp.show');
+Route::get('chirp/show/{chirp}', [ChirpController::class, 'show'])->name('chirp.show');
 
-Route::get('chirp/edit{chirp}', [ChirpController::class, 'edit'])->name('chirp.edit');
+Route::get('chirp/edit/{chirp}', [ChirpController::class, 'edit'])->name('chirp.edit');
 
 
 

@@ -14,7 +14,7 @@ class Tag extends Model
     ];
 
 
-    public function chirp(){
+    public function chirps(){
         return $this->belongsToMany(Chirp::class);
     }
 }

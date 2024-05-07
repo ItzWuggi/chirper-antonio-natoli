@@ -14,8 +14,13 @@ class CreateChirp extends Component
      public $title;
 
     #[Validate('min:5', message: "Il contenuto del chirp che hai inserito è troppo corto")]
-     public $content;        
-     public $tag;
+     public $content;  
+
+    #[Validate('required', message: 'Inserisci la virgola dopo ogni tag')]
+     public $tags;
+
+
+     
     public function store()
     {
         $this->validate();
@@ -26,12 +31,18 @@ class CreateChirp extends Component
             "user_id"=>Auth::user()->id, 
 
         ]);
+    
+        $arrayTags = explode(',' , $this->tags);
+        foreach ($arrayTags as $tag) {
+            $createTag = Tag::updateOrCreate([
+                "tag"=>$tag
+            ]);            
+            $chirp->tags()->attach($createTag);
+        }
 
-        $tag = Tag::create([
-            "tag"=>$this->tag
-        ]);
 
-        $chirp->tag()->attach($tag);
+
+
         
 
         $this->reset();
