@@ -16,10 +16,10 @@ class CreateChirp extends Component
     #[Validate('min:5', message: "Il contenuto del chirp che hai inserito è troppo corto")]
      public $content;  
 
-    #[Validate('required', message: 'Inserisci la virgola dopo ogni tag')]
+    #[Validate('required|regex:/^(\w+)(,\s*\w+)*$/', message: 'Inserisci la virgola dopo ogni tag')]
      public $tags;
 
-
+   
      
     public function store()
     {

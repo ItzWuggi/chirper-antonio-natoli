@@ -12,6 +12,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('auth.profile')}}">Il mio profilo</a>
+          </li>
           @guest
           <li class="nav-item">
             <a class="nav-link" href="{{route('register')}}">Registrati</a>

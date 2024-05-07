@@ -19,6 +19,7 @@ Route::get('chirp/show/{chirp}', [ChirpController::class, 'show'])->name('chirp.
 
 Route::get('chirp/edit/{chirp}', [ChirpController::class, 'edit'])->name('chirp.edit');
 
+Route::get('auth/profile', [AuthController::class, 'profile'])->name('auth.profile');
 
 
 
